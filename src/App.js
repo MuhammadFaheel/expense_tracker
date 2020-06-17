@@ -5,15 +5,18 @@ import TotalPayment from './components/TotalPayment';
 import ItemBuyer from './components/ItemBuyer';
 import ItemList from './components/ItemsList';
 import AddItem from './components/AddItem';
+import { GlobalProvider } from './context/GlobalState'
 
 function App() {
   return (
-    <div>
-      <Header />
-      <TotalPayment />
-      <ItemBuyer />
-      <ItemList />
-      <AddItem />
+    <div className="App">
+      <GlobalProvider>
+        <Header />
+        <TotalPayment />
+        <ItemBuyer />
+        <ItemList />
+        <AddItem />
+      </GlobalProvider>
     </div>
   );
 }

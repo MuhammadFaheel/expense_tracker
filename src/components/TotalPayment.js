@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { GlobalContext } from "../context/GlobalState";
 
 function TotalPayment() {
+
+    const {items} = useContext(GlobalContext)
+
+    const amount = items.map(item => item.amount);
+    const total = amount.reduce((acc, item) => (acc += item), 0).toFixed(2)
+
     return (
         <div className='App'>
-            <h4>Your Total:</h4>
-            <h3>Rs. 0.00</h3>
+            <h4>YOUR TOTAL:</h4>
+            <h1>Rs. {total}</h1>
         </div>
     )
 }

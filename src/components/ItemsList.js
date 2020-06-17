@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useContext} from  'react';
+import { GlobalContext } from '../context/GlobalState';
+import Item from './Item';
 
 function ItemsList() {
+
+    const { items } = useContext(GlobalContext);
+
     return (
         <div>
-            <h3>History</h3>
+            <h4>History</h4>
             <ul>
-                <li>Cash <span>-$400</span><button>x</button></li>
+                {items.map(item => (<Item key={item.id} item={item} />))}
             </ul>
         </div>
     )
