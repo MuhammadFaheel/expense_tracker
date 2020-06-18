@@ -1,6 +1,7 @@
 import React, {useContext} from  'react';
 import { GlobalContext } from '../context/GlobalState';
 import Item from './Item';
+import '../App.css';
 
 function ItemsList() {
 
@@ -8,7 +9,7 @@ function ItemsList() {
 
     return (
         <div>
-            <h4>History</h4>
+            <h4>History:</h4>
             <ul>
                 {items.map(item => (<Item key={item.id} item={item} />))}
             </ul>

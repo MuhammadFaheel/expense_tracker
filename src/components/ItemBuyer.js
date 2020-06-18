@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {GlobalContext} from '../context/GlobalState';
+import '../App.css';
 
 function ItemBuyer() {
 
@@ -12,12 +13,12 @@ function ItemBuyer() {
     return (
         <div>
             <div>
-                <h4>CASH</h4>
-                <p>+Rs. {cash}</p>
+                <h4>INCOME:</h4>
+                <p className="income">+Rs. {cash}</p>
             </div>
             <div>
-                <h4>EXPENSE</h4>
-                <p>-Rs. {expense}</p>
+                <h4>EXPENSE:</h4>
+                <p className="expense">-Rs. {expense}</p>
             </div>
         </div>
     )

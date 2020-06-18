@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {GlobalContext} from '../context/GlobalState';
+import '../App.css';
 
 function AddItem() {
 
@@ -19,23 +20,23 @@ function AddItem() {
 
     return (
         <div>
-            <h4>Add New Item</h4>
+            <h4>Add New Item:</h4>
             <form onSubmit={newItem}>
                 <div>
-                    <label>Text</label>
+                    <label>Text:</label>
                     <br />
                     <input type="text" value={text} onChange={e => setText(e.target.value)} placeholder="Enter Text..." />
                 </div>
                 <div>
                     <label>
-                        Amount
+                        Amount:
                         <br/>
                         (negative - expense, positive - income)
                         <br />
                     </label>
                     <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="Enter Amount..." />
                 </div>
-                <button>Add Item</button>
+                <button className="additem">Add Item</button>
             </form>
         </div>
     )

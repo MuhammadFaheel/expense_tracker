@@ -9,15 +9,15 @@ import { GlobalProvider } from './context/GlobalState'
 
 function App() {
   return (
-    <div className="App">
-      <GlobalProvider>
+    <GlobalProvider>
+      <div className="container">
         <Header />
         <TotalPayment />
         <ItemBuyer />
         <ItemList />
         <AddItem />
-      </GlobalProvider>
-    </div>
+      </div>
+    </GlobalProvider>
   );
 }
 
