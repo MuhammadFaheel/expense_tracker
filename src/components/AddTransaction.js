@@ -2,12 +2,12 @@ import React, {useState, useContext} from 'react';
 import {GlobalContext} from '../context/GlobalState';
 import '../App.css';
 
-function AddItem() {
+function AddTransaction() {
 
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
 
-    const {addItem} = useContext(GlobalContext);
+    const {addTransaction} = useContext(GlobalContext);
 
     const newItem = e => {
         e.preventDefault();
@@ -15,7 +15,7 @@ function AddItem() {
         const addNewItem = {
             id: Math.floor(Math.random() * 10000000000), text, amount: +amount
         }
-        addItem(addNewItem);
+        addTransaction(addNewItem);
     }
 
     return (
@@ -42,4 +42,4 @@ function AddItem() {
     )
 }
 
-export default AddItem
+export default AddTransaction

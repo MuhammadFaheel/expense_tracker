@@ -2,10 +2,10 @@ import React, {useContext} from 'react';
 import {GlobalContext} from '../context/GlobalState';
 import '../App.css';
 
-function ItemBuyer() {
+function IncomeExpense() {
 
-    const {items} = useContext(GlobalContext);
-    const amount = items.map(item => item.amount);
+    const {transactions} = useContext(GlobalContext);
+    const amount = transactions.map(transaction => transaction.amount);
 
     const cash = amount.filter(item => item > 0).reduce((acc, item) => (acc += item), 0).toFixed(2);
     const expense = (amount.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *-1).toFixed(2);
@@ -24,4 +24,4 @@ function ItemBuyer() {
     )
 }
 
-export default ItemBuyer;
+export default IncomeExpense;

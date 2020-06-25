@@ -2,11 +2,11 @@ import React, {useContext} from 'react';
 import { GlobalContext } from "../context/GlobalState";
 import '../App.css';
 
-function TotalPayment() {
+function TotalBalance() {
 
-    const {items} = useContext(GlobalContext)
+    const {transactions} = useContext(GlobalContext)
 
-    const amount = items.map(item => item.amount);
+    const amount = transactions.map(transaction => transaction.amount);
     const total = amount.reduce((acc, item) => (acc += item), 0).toFixed(2)
 
     return (
@@ -17,4 +17,4 @@ function TotalPayment() {
     )
 }
 
-export default TotalPayment
+export default TotalBalance
